@@ -1,10 +1,19 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import NewIncident from "./src/features/new-incident";
 
-export default function App() {
+export default function Layout() {
   return (
-    <NewIncident />
+    <View style={styles.container}>
+      <View style={styles.leftContainer}>
+        <Text>Left Ment</Text>
+      </View>
+      <View style={styles.midContainer}>
+        <Text>midContainer</Text>
+      </View>
+      <View style={styles.rightContainer}>
+        <Text>Right Menu</Text>
+      </View>
+    </View>
   );
 }
 
