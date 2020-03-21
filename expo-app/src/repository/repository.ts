@@ -159,4 +159,4 @@ class FetchService implements Service {
 
 }
 
-module.exports = RepositoryImpl;
+export default RepositoryImpl;
