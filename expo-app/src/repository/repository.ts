@@ -14,10 +14,18 @@ export interface Repository {
     createHelpRequest(request: HelpRequest): Promise<HelpRequest>;
 
     /**
-     * find helpers for request
-     * @param forRequest HelpRequest to find helpers for
+     * find helpers
+     *
+     * @param matching The filter to apply
      */
-    findHelpers(forRequest: HelpRequest): Promise<HelpRequestHelpers>;
+    findHelpers(matching: HelperSearchDefinition): Promise<HelpRequestHelpers>;
+
+    /**
+     * notify helpers
+     *
+     * @param matching The filter to apply
+     */
+    notifyHelpers(matching: HelperSearchDefinition): Promise<any>;
 }
 
 /**
@@ -36,9 +44,13 @@ export class RepositoryImpl implements Repository {
         return this.service.createHelpRequest(request);
     }
 
-    findHelpers(forRequest: HelpRequest): Promise<HelpRequestHelpers> {
+    findHelpers(matching: HelperSearchDefinition): Promise<HelpRequestHelpers> {
         // TODO: we could add some fancy caching strategies here and only fetch using `service` if data doesn't exist or expired
-        return this.service.findHelpers(forRequest);
+        return this.service.findHelpers(matching);
+    }
+
+    notifyHelpers(matching: HelperSearchDefinition): Promise<any> {
+        return this.service.notifyHelpers(matching);
     }
 
 }
@@ -67,9 +79,33 @@ export interface Service {
 
     /**
      * find helpers for request
-     * @param forRequest HelpRequest to find helpers for
+     * @param matching The filter to apply
      */
-    findHelpers(forRequest: HelpRequest): Promise<HelpRequestHelpers>
+    findHelpers(matching: HelperSearchDefinition): Promise<HelpRequestHelpers>;
+
+    /**
+     * notify helpers matching a previously specified search definition
+     * @param matching The filter to apply
+     */
+    notifyHelpers(matching: HelperSearchDefinition): Promise<any>;
+}
+
+/**
+ * An object which represents a query for helpers
+ */
+interface HelperSearchDefinition {
+    /**
+     * the event's latitude
+     */
+    latitude: number;
+    /**
+     * the event's longitude
+     */
+    longitude: number;
+    /**
+     * required skills for this event
+     */
+    requiredSkills: Skill[];
 }
 
 class FetchService implements Service {
@@ -85,7 +121,7 @@ class FetchService implements Service {
         return this.post(Endpoint.HelpRequest, request);
     }
 
-    findHelpers(forRequest: HelpRequest): Promise<HelpRequestHelpers> {
+    findHelpers(matching: HelperSearchDefinition): Promise<HelpRequestHelpers> {
         return Promise.resolve({
             count: 3,
             skills: [
@@ -101,6 +137,9 @@ class FetchService implements Service {
         });
     }
 
+    notifyHelpers(matching: HelperSearchDefinition): Promise<any> {
+        return Promise.resolve();
+    }
 
     private post<R>(endpoint: Endpoint, body: any): Promise<R> {
         // just act as if id was set by the backend :)
