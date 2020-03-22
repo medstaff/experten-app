@@ -1,5 +1,5 @@
 import {Component, default as React} from "react";
-import {View, Text, Button, Alert, FlatList} from "react-native";
+import {View, Text, Button, Alert} from "react-native";
 import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
 
 interface IncidentDetailsState {

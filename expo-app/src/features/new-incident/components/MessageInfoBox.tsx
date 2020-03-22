@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Button, Picker, CheckBox, ShadowPropTypesIOS } from "react-native";
-import { Repository, RepositoryImpl } from "../../../repository/repository";
+import React from "react";
+import { Text} from "react-native";
 import CurrentHelperNumber from "./CurrentHelperNumber";
-import { TextInput, State } from "react-native-gesture-handler";
 
 export default function MessageInfoBox(props) {
     return(

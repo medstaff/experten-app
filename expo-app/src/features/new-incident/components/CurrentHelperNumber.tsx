@@ -1,5 +1,5 @@
-import React, { Component, useState, useEffect } from "react";
-import { Text, View } from "react-native";
+import React, { useState, useEffect } from "react";
+import { Text} from "react-native";
 import RepositoryImpl, { Repository } from "../../../repository/repository";
 
 export interface Props {

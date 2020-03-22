@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import { Text, View } from "react-native";
 import Layout from "../../components/layout";
 import IncidentInput from "./components/IncidentInput";

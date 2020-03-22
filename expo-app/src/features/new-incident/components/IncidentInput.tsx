@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Button, Picker, CheckBox } from "react-native";
-import { Repository, RepositoryImpl } from "../../../repository/repository";
+import React, { useState} from "react";
+import { StyleSheet, Text, View} from "react-native";
 import CurrentHelperNumberCircle from "./CurrentHelperNumberCircle";
 import {
-  TextInput,
-  State,
   TouchableOpacity
 } from "react-native-gesture-handler";
 import MessageInfoBox from "./MessageInfoBox";

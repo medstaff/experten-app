@@ -3,9 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
-  Button,
-  ShadowPropTypesIOS
+  TextInput
 } from "react-native";
 
 export interface Props {
