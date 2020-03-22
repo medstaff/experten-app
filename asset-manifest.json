@@ -1,22 +1,22 @@
 {
   "files": {
-    "app.js": "/helfer-app/static/js/app.4c1f6ba8.chunk.js",
-    "app.js.map": "/helfer-app/static/js/app.4c1f6ba8.chunk.js.map",
-    "runtime~app.js": "/helfer-app/static/js/runtime~app.ba893389.js",
-    "runtime~app.js.map": "/helfer-app/static/js/runtime~app.ba893389.js.map",
-    "static/js/2.95a52a93.chunk.js": "/helfer-app/static/js/2.95a52a93.chunk.js",
-    "static/js/2.95a52a93.chunk.js.map": "/helfer-app/static/js/2.95a52a93.chunk.js.map",
-    "apple/icons/icon_192x192.png": "/helfer-app/apple/icons/icon_192x192.png",
-    "apple/icons/icon_512x512.png": "/helfer-app/apple/icons/icon_512x512.png",
-    "favicon.ico": "/helfer-app/favicon.ico",
-    "index.html": "/helfer-app/index.html",
-    "manifest.json": "/helfer-app/manifest.json",
-    "precache-manifest.b667e29ca246939969bb5edffc704288.js": "/helfer-app/precache-manifest.b667e29ca246939969bb5edffc704288.js",
-    "serve.json": "/helfer-app/serve.json"
+    "app.js": "/experten-app/static/js/app.732544e4.chunk.js",
+    "app.js.map": "/experten-app/static/js/app.732544e4.chunk.js.map",
+    "runtime~app.js": "/experten-app/static/js/runtime~app.e5c58577.js",
+    "runtime~app.js.map": "/experten-app/static/js/runtime~app.e5c58577.js.map",
+    "static/js/2.113ad400.chunk.js": "/experten-app/static/js/2.113ad400.chunk.js",
+    "static/js/2.113ad400.chunk.js.map": "/experten-app/static/js/2.113ad400.chunk.js.map",
+    "apple/icons/icon_192x192.png": "/experten-app/apple/icons/icon_192x192.png",
+    "apple/icons/icon_512x512.png": "/experten-app/apple/icons/icon_512x512.png",
+    "favicon.ico": "/experten-app/favicon.ico",
+    "index.html": "/experten-app/index.html",
+    "manifest.json": "/experten-app/manifest.json",
+    "precache-manifest.4b4a822d28eac59ea1ba19f85c640897.js": "/experten-app/precache-manifest.4b4a822d28eac59ea1ba19f85c640897.js",
+    "serve.json": "/experten-app/serve.json"
   },
   "entrypoints": [
-    "static/js/runtime~app.ba893389.js",
-    "static/js/2.95a52a93.chunk.js",
-    "static/js/app.4c1f6ba8.chunk.js"
+    "static/js/runtime~app.e5c58577.js",
+    "static/js/2.113ad400.chunk.js",
+    "static/js/app.732544e4.chunk.js"
   ]
 }

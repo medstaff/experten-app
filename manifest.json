@@ -3,20 +3,18 @@
   "dir": "auto",
   "display": "standalone",
   "lang": "en",
-  "name": "Medstaff+",
-  "orientation": "portrait",
+  "orientation": "any",
   "prefer_related_applications": true,
   "related_applications": [],
-  "short_name": "Medstaff+",
   "start_url": ".",
   "icons": [
     {
-      "src": "/helfer-app/apple/icons/icon_192x192.png",
+      "src": "/experten-app/apple/icons/icon_192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/helfer-app/apple/icons/icon_512x512.png",
+      "src": "/experten-app/apple/icons/icon_512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
