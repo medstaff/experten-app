@@ -39,10 +39,17 @@ export default class LeftMenu extends Component<LeftMenuProps, LeftMenuState> {
     renderItem(data: ListRenderItemInfo<HelpRequestData>) {
         // TODO: TouchableOpacity -> Link?
         // TODO: Highlight selected
-        let style = data.item.isSelected ? styles.selectedItem : {};
+        let textStyle = data.item.isSelected ? styles.selectedItem : {};
         return (
             <TouchableOpacity onPress={() => this.selectItem(data)}>
-                <Text style={style}>{data.item.request.name}</Text>
+                <View style={{padding: 8, paddingLeft: 16}}>
+                    <Text style={textStyle}>
+                        {data.item.request.name}
+                    </Text>
+                    <Text style={textStyle}>
+                        {data.item.request.created_at}
+                    </Text>
+                </View>
             </TouchableOpacity>
         );
     }
