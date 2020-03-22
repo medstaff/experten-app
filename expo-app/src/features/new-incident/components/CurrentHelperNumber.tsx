@@ -1,5 +1,5 @@
-import React, { Component, useState, useEffect } from "react";
-import { Text, View } from "react-native";
+import React, { useState, useEffect } from "react";
+import { Text } from "react-native";
 import RepositoryImpl, {
   Repository,
   HelperSearchDefinition
@@ -17,7 +17,7 @@ export interface Props {
  */
 export default function CurrentHelperNumber(props: Props) {
   const [numHelpers, setNumHelpers] = useState(0);
-  const [stateHelpRequest, setStateHelpRequest] = useState(props.helpRequest);
+  const [stateHelpRequest] = useState(props.helpRequest);
 
   let repository: Repository = new RepositoryImpl();
 

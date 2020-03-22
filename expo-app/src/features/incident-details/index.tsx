@@ -1,16 +1,27 @@
 import {Component, default as React} from "react";
-import {View, Text, Button, Alert, FlatList} from "react-native";
+import {View, Text, Button, Alert} from "react-native";
 import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
 
+/**
+ * State representing underlying data of IncidentDetails
+ */
 interface IncidentDetailsState {
+    /**
+     * The HelpRequest displayed
+     */
     data?: HelpRequest;
 }
 
+/**
+ * Props for IncidentDetails
+ */
 interface IncidentDetailsProps {
-    initialState: IncidentDetailsState
 }
 
-export default class IncidentDetails extends Component<IncidentDetailsProps, IncidentDetailsState> {
+/**
+ * A Component which displays a HelpRequest
+ */
+export default class HelpRequestDetails extends Component<IncidentDetailsProps, IncidentDetailsState> {
 
     public setHelpRequest(h: HelpRequest) {
         this.setState({ data: h });
@@ -49,7 +60,7 @@ export default class IncidentDetails extends Component<IncidentDetailsProps, Inc
                         onPress={() => Alert.alert('Right button pressed')}
                     />
                 </View>
-                <Text style={{paddingTop: 16, paddingBottom: 16}}>Es haben sich 4 potenzielle Helfer:innen auf dein Gesuch gemeldet</Text>
+                <Text style={{paddingTop: 16, paddingBottom: 16}}>Es haben sich {state.data.helpers.length} potenzielle Helfer:innen auf dein Gesuch gemeldet</Text>
                 <Table borderStyle={{borderWidth: 1}}>
                     <Row data={tableHeaders} flexArr={[1, 1, 1]} style={styles.head} textStyle={styles.text}/>
                     <TableWrapper style={styles.wrapper}>

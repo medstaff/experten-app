@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {FlatList, ListRenderItemInfo, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {FlatList, ListRenderItemInfo, Text, TouchableOpacity, View} from "react-native";
 import {Repository} from "../../repository/repository";
 
 interface HelpRequestData {
