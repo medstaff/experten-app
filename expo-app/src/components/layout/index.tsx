@@ -9,6 +9,11 @@ export interface Props {
   rightContent: React.Component;
 }
 
+/**
+ * layout is the main container. It create 2 or 3 columns and also
+ * wraps the modal for the input
+ * @param props
+ */
 export default function Layout(props: Props) {
   let [isVisible, setIsVisible] = useState(true);
 
@@ -16,7 +21,7 @@ export default function Layout(props: Props) {
     <TouchableOpacity onPress={onPress}>
       <View
         style={{
-            flex: 1,
+          flex: 1,
           backgroundColor: "lightblue",
           padding: 12,
           margin: 16,
@@ -35,28 +40,31 @@ export default function Layout(props: Props) {
     return (
       <View
         style={{
-            flex: 1,
+          flex: 1,
           backgroundColor: "white",
+          alignItems: "center",
           padding: 22,
           borderRadius: 4,
           borderColor: "rgba(0, 0, 0, 0.1)"
         }}
       >
-        <IncidentInput modalCloseComponent={renderButton("Close", () => {
-          setIsVisible(false);
-        })}/>
+        <IncidentInput
+          modalCloseComponent={renderButton("Close", () => {
+            setIsVisible(false);
+          })}
+        />
       </View>
     );
   };
   return (
     <View style={styles.container}>
       <View style={styles.leftContainer}>
-          {props.leftContent}
-          {renderButton("+", () => {
-            setIsVisible(true);
-          })}
-          <Modal isVisible={isVisible}>{renderModalContent()}</Modal>
-          </View>
+        {props.leftContent}
+        {renderButton("+", () => {
+          setIsVisible(true);
+        })}
+        <Modal isVisible={isVisible}>{renderModalContent()}</Modal>
+      </View>
       <View style={styles.midContainer}>{props.midContent}</View>
     </View>
   );
@@ -65,18 +73,18 @@ export default function Layout(props: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
+    flexDirection: "row"
   },
   leftContainer: {
     flex: 1,
     borderRightWidth: 1,
-    borderRightColor: "#00000000d3",
+    borderRightColor: "#00000000d3"
   },
   midContainer: {
     flex: 4,
-    flexDirection: "column",
+    flexDirection: "column"
   },
   rightContainer: {
-    flex: 1,
+    flex: 1
   }
 });
