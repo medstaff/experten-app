@@ -1,10 +1,5 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import NewIncident from "./src/features/new-incident";
-import {createStackNavigator} from 'react-navigation-stack';
-import {createBrowserApp} from '@react-navigation/web';
-import Layout from "./src/components/layout";
-import LeftMenu from "./src/components/left-menu";
 import Navigator from "./src/navigation";
 
 
