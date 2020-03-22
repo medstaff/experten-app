@@ -4,3 +4,6 @@ Die Helfer-App für die Helferplattform. In dieser App können sich interessiert
 # INSTALL
 0. Install expo-cli: https://docs.expo.io/versions/latest/get-started/installation/
 1. `cd expo-app && yarn run`
+
+# Demo
+https://helferplattform.github.io/helfer-app/
