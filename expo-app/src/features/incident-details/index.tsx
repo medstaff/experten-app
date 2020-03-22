@@ -65,6 +65,8 @@ export default class IncidentDetails extends Component<IncidentDetailsProps, Inc
 const styles = {
     container: {
         flex: 1,
+        paddingLeft: 16,
+        paddingRight: 16
     },
     title: {
         fontSize: 48,
