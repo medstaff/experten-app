@@ -4,7 +4,7 @@ import Modal from "modal-enhanced-react-native-web";
 import IncidentInput from "../../features/new-incident/components/IncidentInput";
 
 export interface Props {
-  leftContent: React.Component;
+  leftContent: Element;
   midContent: React.Component;
   rightContent: React.Component;
 }
@@ -16,7 +16,7 @@ export interface Props {
  */
 export default function Layout(props: Props) {
   /** modal visibility state */
-  let [isVisible, setIsVisible] = useState<boolean>(true);
+  let [isVisible, setIsVisible] = useState<boolean>(false);
 
   /**
    * Button to toggle the modal overlay

@@ -8,7 +8,7 @@ export interface Props {
   adressString: string;
   helpRequest: HelpRequest;
   updateHelpRequest: any;
-  updateHelperSearchDefinition: HelperSearchDefinition;
+  updateHelperSearchDefinition: (HelperSearchDefinition) => void;
 }
 
 Geocoder.init("AIzaSyC9cFDJwcroS2OcOO19SVJdYN9OQ6RYBWI");

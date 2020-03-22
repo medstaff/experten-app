@@ -9,7 +9,7 @@ import {
 export interface Props {
   heading: string;
   placeholder: string;
-  onChangeText: (text: String) => void,
+  onChangeText: (text: string) => void,
   onEndEditing: () => void,
 }
 

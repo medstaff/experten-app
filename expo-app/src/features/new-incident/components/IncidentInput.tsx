@@ -13,7 +13,7 @@ import DateInput from "./DateInput";
 import PlaceHolderText from "./PlaceHolderText";
 
 export interface Props {
-  modalCloseComponent: React.Component;
+  modalCloseComponent: JSX.Element;
 }
 
 /**
@@ -64,7 +64,6 @@ export default function IncidentInput(props: Props) {
         <SectionHeadline>1. Daten eingeben</SectionHeadline>
         <SectionHeadline>2. Verfügbare Helfer</SectionHeadline>
       </View>
-      {/* {helpRequest.skills.map((item) => {return <Text>{item.name}</Text>})} */}
       <View style={{ flex: 10, flexDirection: "row" }}>
         {/* 1. card */}
         <View style={{ flex: 1 }}>
@@ -103,9 +102,14 @@ export default function IncidentInput(props: Props) {
                     updateHelpRequest={updateHelpRequest}
                   />
                   <View
-                    style={{ flex: 1, padding: 5, justifyContent: "center" }}
+                    style={{ flex: 1, justifyContent: "center" }}
                   >
-                    <Text style={{}}>Dauer vor. X Stunden</Text>
+                    <FieldWithHeading
+                      heading={"Wie lange?"}
+                      placeholder={"Anzahl an Tagen eingeben"}
+                      onChangeText={() => {}}
+                      onEndEditing={() => {}}
+                    />
                   </View>
                 </View>
               </View>
@@ -142,7 +146,7 @@ export default function IncidentInput(props: Props) {
             <View style={{ flex: 5, flexDirection: "row" }}>
               <View style={{ flex: 1, backgroundColor: "white", padding: 10 }}>
                 <SectionHeadline>Helfer anfordern</SectionHeadline>
-                <MessageInfoBox helpRequest={helpRequest} />
+                <MessageInfoBox />
                 <SubmitButton />
               </View>
             </View>

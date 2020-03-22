@@ -6,9 +6,10 @@ import RepositoryImpl, {
 } from "../../../repository/repository";
 
 export interface Props {
-  helpRequest: HelpRequest;
-  helperSearchDefinition: HelperSearchDefinition;
-  fontSize: number;
+  helpRequest: HelpRequest,
+  helperSearchDefinition: HelperSearchDefinition,
+  fontSize: number,
+  render: boolean,
 }
 
 /**

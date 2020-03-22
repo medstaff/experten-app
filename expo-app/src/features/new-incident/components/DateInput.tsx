@@ -25,9 +25,9 @@ export default function DateInput(props: Props) {
   }, [date]);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1 , marginLeft: 5}}>
       <View style={{ flex: 1 }}>
-        <Text>Datum: </Text>
+        <Text>Datum</Text>
       </View>
       <View style={{ flex: 1 }}>
         <form>
