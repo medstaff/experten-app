@@ -26,6 +26,8 @@ export interface Repository {
      * @param matching The filter to apply
      */
     notifyHelpers(matching: HelperSearchDefinition): Promise<any>;
+
+    getHelpRequests(): Promise<HelpRequest[]>
 }
 
 /**
@@ -51,6 +53,10 @@ export class RepositoryImpl implements Repository {
 
     notifyHelpers(matching: HelperSearchDefinition): Promise<any> {
         return this.service.notifyHelpers(matching);
+    }
+
+    getHelpRequests(): Promise<HelpRequest[]> {
+        return this.service.getHelpRequests();
     }
 
 }
@@ -88,6 +94,8 @@ export interface Service {
      * @param matching The filter to apply
      */
     notifyHelpers(matching: HelperSearchDefinition): Promise<any>;
+
+    getHelpRequests(): Promise<HelpRequest[]>
 }
 
 /**
@@ -139,6 +147,20 @@ class FetchService implements Service {
 
     notifyHelpers(matching: HelperSearchDefinition): Promise<any> {
         return Promise.resolve();
+    }
+
+    getHelpRequests(): Promise<HelpRequest[]> {
+        const MOCKED_HELPREQUESTS = [
+            { id: 1, name: "Am Tannenbusch 13" },
+            { id: 1, name: "Rapsacker 27" },
+            { id: 1, name: "Am Teich 4" },
+            { id: 1, name: "Unter den Linden 27" },
+        ];
+        return this.get(Endpoint.HelpRequest, MOCKED_HELPREQUESTS);
+    }
+
+    private get<T>(endpoint: Endpoint, mockValue: T): Promise<T> {
+        return Promise.resolve(mockValue)
     }
 
     private post<R>(endpoint: Endpoint, body: any): Promise<R> {
