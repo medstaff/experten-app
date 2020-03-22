@@ -58,11 +58,6 @@ export default function Layout(props: Props) {
           <Modal isVisible={isVisible}>{renderModalContent()}</Modal>
           </View>
       <View style={styles.midContainer}>{props.midContent}</View>
-      {/* {
-        <View style={styles.rightContainer}>
-          
-        </View>
-      } */}
     </View>
   );
 }
@@ -71,21 +66,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
-    backgroundColor: "#fff"
   },
   leftContainer: {
     flex: 1,
-    backgroundColor: "#aaa"
+    borderRightWidth: 1,
+    borderRightColor: "#00000000d3",
   },
   midContainer: {
     flex: 4,
     flexDirection: "column",
-    backgroundColor: "red",
     justifyContent: "center",
     alignItems: "center"
   },
   rightContainer: {
     flex: 1,
-    backgroundColor: "#aaa"
   }
 });
