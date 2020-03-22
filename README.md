@@ -8,4 +8,4 @@ Die Helfer-App für die Helferplattform. In dieser App können sich interessiert
 1. `cd expo-app && yarn run`
 
 # Demo
-https://meedstaff.github.io/helfer-app/
+https://medstaff.github.io/helfer-app/
