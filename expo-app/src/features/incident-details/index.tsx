@@ -24,7 +24,12 @@ export default class IncidentDetails extends Component<IncidentDetailsProps, Inc
     render() {
         let state = this.state;
         if (state == null || state.data == null) {
-            return (<View/>);
+            return (
+                <View style={styles.container}>
+                    <Text style={styles.title}>Hey! Bitte wähle links ein Hilfegesuch aus</Text>
+                    <Text>Die Daten werden dann hier angezeigt</Text>
+                </View>
+            );
         }
         let tableHeaders = [ "Name", "E-Mail", "Telefon" ];
         let tableData = state.data.helpers.map(h => [ h.email, h.phone ]);
