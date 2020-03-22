@@ -4,7 +4,7 @@ import AllIncidents from "../features/all-incidents";
 
 const Navigator = createStackNavigator(
   {
-    "Medstaff+": AllIncidents
+    "MedStaff+": AllIncidents
   }
 );
 
