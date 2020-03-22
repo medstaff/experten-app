@@ -1,7 +1,8 @@
 interface HelpRequest {
-    id: string;
+    id: number;
     name: string;
-    // required skills, location etc...
+    roles: Skill[];
+    skills: Skill[];
 }
 
 interface Skill {
