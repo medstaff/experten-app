@@ -7,6 +7,13 @@ export interface Props {
   setHelpRequest: any;
 }
 
+/**
+ * Overview over available skills to pick
+ * On selection, the checkbox will give information about 
+ * the state. Further, the parents HelpRequests Skills Array will
+ * be updated
+ * @param props 
+ */
 export default function SkillsPicker(props: Props) {
   const [skills, setSkills] = useState([
     { skill: { id: 0, name: "Erste Hilfe" }, checked: false },

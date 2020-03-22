@@ -10,6 +10,8 @@ export interface Props {
 
 Geocoder.init("AIzaSyC9cFDJwcroS2OcOO19SVJdYN9OQ6RYBWI");
 
+const DEFAULT_LATLONG = { lat: 52.5186202, lng: 13.3761872 };
+
 /**
  * Renders a *parent-filling* GoogleMap. Listens on the adressString
  * Prop in order to rerender to new Adress, while updating helpRequest 
@@ -17,7 +19,7 @@ Geocoder.init("AIzaSyC9cFDJwcroS2OcOO19SVJdYN9OQ6RYBWI");
  * @param props 
  */
 export default function AdressMapView(props: Props) {
-  let [coords, setCoords] = useState({ lat: 42, lng: 0.8 });
+  let [coords, setCoords] = useState(DEFAULT_LATLONG);
   const getGeocodeFromAdress = async (adress: String) => {
     Geocoder.from(adress)
       .then(json => {

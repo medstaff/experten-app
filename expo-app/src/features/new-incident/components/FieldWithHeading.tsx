@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  ShadowPropTypesIOS
-} from "react-native";
+import { StyleSheet, Text, View, TextInput } from "react-native";
 
 export interface Props {
   heading: string;
@@ -14,6 +7,10 @@ export interface Props {
   onChangeText: any;
 }
 
+/**
+ * Just an input field with a headline
+ * @param props 
+ */
 export default function FieldWithHeading(props: Props) {
   return (
     <View style={styles.container}>

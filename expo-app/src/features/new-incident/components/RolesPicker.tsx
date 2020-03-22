@@ -7,6 +7,15 @@ export interface Props {
   setHelpRequest: any;
 }
 
+
+/**
+ * Overview over available roles to pick
+ * On selection, the checkbox will give information about 
+ * the state. Further, the parents HelpRequests Roles Array will
+ * be updated
+ * TODO: replace with endpoints roles from db.
+ * @param props 
+ */
 export default function RolesPicker(props: Props) {
   const [roles, setRoles] = useState([
     { role: { id: 0, name: "Pfleger*in" }, checked: false },
