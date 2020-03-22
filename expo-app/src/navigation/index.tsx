@@ -6,8 +6,7 @@ import RepositoryImpl from "../repository/repository";
 
 const Navigator = createStackNavigator(
   {
-    Suche: AllIncidents,
-    Antworten: AllIncidents
+    "Medstaff+": AllIncidents
   }
 )
 
