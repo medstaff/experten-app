@@ -75,8 +75,6 @@ const styles = StyleSheet.create({
   midContainer: {
     flex: 4,
     flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
   },
   rightContainer: {
     flex: 1,
