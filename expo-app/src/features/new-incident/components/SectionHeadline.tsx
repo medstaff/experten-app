@@ -6,7 +6,7 @@ export interface Props {
 }
 export default function SectionHeadline(props: Props) {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "flex-start" }}>
       <Text
         style={{
           fontSize: 30

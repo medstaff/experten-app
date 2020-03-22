@@ -10,7 +10,7 @@ export interface Props{
 export default function MessageInfoBox(props: Props) {
     return(
         <View
-            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+            style={{ flex: 1, justifyContent: "flex-start", alignItems: "center", padding: 5 }}
           >
             <View
               style={{
@@ -18,13 +18,15 @@ export default function MessageInfoBox(props: Props) {
                 width: 100,
                 height: 100,
                 borderRadius: 100 / 2,
+                borderWidth: 3,
                 justifyContent: "center",
                 alignItems: "center"
               }}
             >
               <CurrentHelperNumber
                 helpRequest={props.helpRequest}
-                fontSize={100}
+                render={props.render}
+                fontSize={75}
               />
             </View>
         </View>

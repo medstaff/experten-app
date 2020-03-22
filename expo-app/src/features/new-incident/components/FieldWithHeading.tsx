@@ -1,20 +1,27 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Button, ShadowPropTypesIOS } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  ShadowPropTypesIOS
+} from "react-native";
 
-export interface Props{
-    heading: string,
-    placeholder: string,
+export interface Props {
+  heading: string;
+  placeholder: string;
 }
 
 export default function FieldWithHeading(props: Props) {
   return (
     <View style={styles.container}>
-        <View style={{flex: 1}}>
-            <Text>{props.heading}</Text>
-        </View>
-        <View style={{flex: 1}}>
-            <TextInput placeholder={props.placeholder} />
-        </View>
+      <View style={{ flex: 1 }}>
+        <Text style={{flex : 1}}>{props.heading}</Text>
+      </View>
+      <View style={{ flex: 1 }}>
+        <TextInput style={{ borderRadius: 2, borderWidth: 3, padding: 5 }} placeholder={props.placeholder} />
+      </View>
     </View>
   );
 }
@@ -22,9 +29,8 @@ export default function FieldWithHeading(props: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
+    padding: 5,
+    flexDirection: "column",
     backgroundColor: "#fff",
-    justifyContent: "center",
-    alignContent: "center",
-  },
+  }
 });
