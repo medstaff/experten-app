@@ -37,11 +37,13 @@ export default class IncidentDetails extends Component<IncidentDetailsProps, Inc
             <View style={styles.container}>
                 <Text style={styles.title}>{this.state.data.name}</Text>
                 <Text>{this.state.data.date_start}</Text>
-                <View style={styles.fixToText}>
+                <View style={styles.buttonContainer}>
                     <Button
                         title="Download PDF"
                         onPress={() => Alert.alert('Left button pressed')}
                     />
+                    <View
+                    style={{width: 16}}/>
                     <Button
                         title="Download CSV"
                         onPress={() => Alert.alert('Right button pressed')}
@@ -62,15 +64,14 @@ export default class IncidentDetails extends Component<IncidentDetailsProps, Inc
 
 const styles = {
     container: {
-        flex: 1
+        flex: 1,
     },
     title: {
         fontSize: 48,
         fontWeight: 'bold'
     },
-    fixToText: {
+    buttonContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
     },
     helperListItem: {
         flexDirection: 'row',
