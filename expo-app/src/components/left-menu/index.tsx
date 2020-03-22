@@ -75,4 +75,4 @@ const styles = {
     selectedItem: {
         fontWeight: "bold"
     }
-}
+};
