@@ -47,7 +47,7 @@ export default class IncidentDetails extends Component<IncidentDetailsProps, Inc
                         onPress={() => Alert.alert('Right button pressed')}
                     />
                 </View>
-                <Text style={{paddingTop: 16, paddingBottom: 16}}>Es haben sich 4 potenzielle Helfer:innen auf deinen Aufruf gemeldet</Text>
+                <Text style={{paddingTop: 16, paddingBottom: 16}}>Es haben sich 4 potenzielle Helfer:innen auf dein Gesuch gemeldet</Text>
                 <Table borderStyle={{borderWidth: 1}}>
                     <Row data={tableHeaders} flexArr={[1, 1, 1]} style={styles.head} textStyle={styles.text}/>
                     <TableWrapper style={styles.wrapper}>
