@@ -8,20 +8,20 @@ self.__precacheManifest = [
     "url": "/helfer-app/static/js/runtime~app.ba893389.js"
   },
   {
-    "revision": "57695dd66642f0a7703b",
-    "url": "/helfer-app/static/js/2.e19b36d9.chunk.js"
+    "revision": "66bc2b640145205fe5f0",
+    "url": "/helfer-app/static/js/2.1c6fe0b9.chunk.js"
   },
   {
     "revision": "d0c694b562b2208635f250762cd7fc79",
     "url": "/helfer-app/serve.json"
   },
   {
-    "revision": "7a7bc7ead25db795e58b336f04d2624c",
-    "url": "/helfer-app/favicon.ico"
-  },
-  {
     "revision": "48c7ed4e7da9792af288a60d7242d615",
     "url": "/helfer-app/expo-service-worker.js"
+  },
+  {
+    "revision": "7a7bc7ead25db795e58b336f04d2624c",
+    "url": "/helfer-app/favicon.ico"
   },
   {
     "revision": "54d395411abca431a7388951619904dc",
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/helfer-app/apple/icons/icon_512x512.png"
   },
   {
-    "revision": "da245ae16fbdc7e7939398022d42176c",
+    "revision": "f385215fba1104904393552149f7a17b",
     "url": "/helfer-app/index.html"
   },
   {
