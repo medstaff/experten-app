@@ -8,12 +8,17 @@ import RolesPicker from "./RolesPicker";
 import SkillsPicker from "./SkillsPicker";
 import SectionHeadline from "./SectionHeadline";
 
+
+export interface Props{
+	modalCloseComponent: React.Component,
+}
+
 /**
  * This part should be showing filter options and the number of
  * available helpers matching the criteria
  * If the sorting is sufficient, you should post
  */
-export default function IncidentInput() {
+export default function IncidentInput(props: Props) {
   let [helpRequest, setHelpRequest] = useState({
     id: "3",
     name: "Babuschka Boi"
@@ -21,6 +26,7 @@ export default function IncidentInput() {
 
   return (
     <View style={styles.container}>
+			{props.modalCloseComponent}
       {/* 1. card */}
       <View style={{ flex: 1 }}>
         <SectionHeadline>1. Wo?</SectionHeadline>
@@ -81,11 +87,7 @@ export default function IncidentInput() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    left: 0,
-		right: 0,
+    
 		maxWidth: 1024,
     flexDirection: "column",
     backgroundColor: "white"
