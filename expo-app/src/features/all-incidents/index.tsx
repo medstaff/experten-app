@@ -10,7 +10,7 @@ export default class AllIncidents extends Component {
 
   private details: HelpRequestDetails;
   private leftContent = (<LeftMenu repository={repository} selectItem={item => this.selectItem(item)}/>);
-  private midContent = (<HelpRequestDetails initialState={{data: null }} ref={ref => this.details = ref}/>);
+  private midContent = (<HelpRequestDetails ref={ref => this.details = ref}/>);
 
   selectItem(item: HelpRequest) {
     this.details.setHelpRequest(item);
