@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/helfer-app/precache-manifest.c6b7cc0bbe1bddde77b424b86fd44fcc.js"
+  "/helfer-app/precache-manifest.666025f8e0b05a99847c016588ac6798.js"
 );
 
 workbox.skipWaiting();
