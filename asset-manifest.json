@@ -1,22 +1,22 @@
 {
   "files": {
-    "app.js": "/helfer-app/static/js/app.119e9e82.chunk.js",
-    "app.js.map": "/helfer-app/static/js/app.119e9e82.chunk.js.map",
+    "app.js": "/helfer-app/static/js/app.b6c13576.chunk.js",
+    "app.js.map": "/helfer-app/static/js/app.b6c13576.chunk.js.map",
     "runtime~app.js": "/helfer-app/static/js/runtime~app.ba893389.js",
     "runtime~app.js.map": "/helfer-app/static/js/runtime~app.ba893389.js.map",
-    "static/js/2.f55a6c2f.chunk.js": "/helfer-app/static/js/2.f55a6c2f.chunk.js",
-    "static/js/2.f55a6c2f.chunk.js.map": "/helfer-app/static/js/2.f55a6c2f.chunk.js.map",
+    "static/js/2.343486b6.chunk.js": "/helfer-app/static/js/2.343486b6.chunk.js",
+    "static/js/2.343486b6.chunk.js.map": "/helfer-app/static/js/2.343486b6.chunk.js.map",
     "apple/icons/icon_192x192.png": "/helfer-app/apple/icons/icon_192x192.png",
     "apple/icons/icon_512x512.png": "/helfer-app/apple/icons/icon_512x512.png",
     "favicon.ico": "/helfer-app/favicon.ico",
     "index.html": "/helfer-app/index.html",
     "manifest.json": "/helfer-app/manifest.json",
-    "precache-manifest.666025f8e0b05a99847c016588ac6798.js": "/helfer-app/precache-manifest.666025f8e0b05a99847c016588ac6798.js",
+    "precache-manifest.7aeb470132d67e6bb22e1e147d98403a.js": "/helfer-app/precache-manifest.7aeb470132d67e6bb22e1e147d98403a.js",
     "serve.json": "/helfer-app/serve.json"
   },
   "entrypoints": [
     "static/js/runtime~app.ba893389.js",
-    "static/js/2.f55a6c2f.chunk.js",
-    "static/js/app.119e9e82.chunk.js"
+    "static/js/2.343486b6.chunk.js",
+    "static/js/app.b6c13576.chunk.js"
   ]
 }
