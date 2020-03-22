@@ -6,7 +6,7 @@ const Navigator = createStackNavigator(
   {
     "Medstaff+": AllIncidents
   }
-)
+);
 
 const container = createBrowserApp(Navigator);
 

@@ -30,7 +30,7 @@ export default function IncidentInput(props: Props) {
     skills: []
   });
 	let [render, setRender] = useState(false);
-	let [adressString, onAdressChange] = useState()
+	let [adressString, onAdressChange] = useState();
 
   const updateHelpRequest = (helpRequest: HelpRequest) => {
     setHelpRequest(helpRequest);
