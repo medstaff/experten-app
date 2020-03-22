@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Blank Template (TypeScript)",
-    "slug": "Helfer-App",
+    "name": "Medstaff+",
+    "slug": "Medstaff+",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
