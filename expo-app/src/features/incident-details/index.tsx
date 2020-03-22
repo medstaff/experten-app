@@ -2,15 +2,26 @@ import {Component, default as React} from "react";
 import {View, Text, Button, Alert} from "react-native";
 import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
 
+/**
+ * State representing underlying data of IncidentDetails
+ */
 interface IncidentDetailsState {
+    /**
+     * The HelpRequest displayed
+     */
     data?: HelpRequest;
 }
 
+/**
+ * Props for IncidentDetails
+ */
 interface IncidentDetailsProps {
-    initialState: IncidentDetailsState
 }
 
-export default class IncidentDetails extends Component<IncidentDetailsProps, IncidentDetailsState> {
+/**
+ * A Component which displays a HelpRequest
+ */
+export default class HelpRequestDetails extends Component<IncidentDetailsProps, IncidentDetailsState> {
 
     public setHelpRequest(h: HelpRequest) {
         this.setState({ data: h });
