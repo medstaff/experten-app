@@ -3,11 +3,11 @@
   "dir": "auto",
   "display": "standalone",
   "lang": "en",
-  "name": "Blank Template (TypeScript)",
+  "name": "Medstaff+",
   "orientation": "portrait",
   "prefer_related_applications": true,
   "related_applications": [],
-  "short_name": "Blank Template (TypeScript)",
+  "short_name": "Medstaff+",
   "start_url": ".",
   "icons": [
     {
