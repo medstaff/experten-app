@@ -2,12 +2,17 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Button, Picker, CheckBox } from "react-native";
 import { Repository, RepositoryImpl } from "../../../repository/repository";
 import CurrentHelperNumberCircle from "./CurrentHelperNumberCircle";
-import { TextInput, State } from "react-native-gesture-handler";
+import {
+  TextInput,
+  State,
+  TouchableOpacity
+} from "react-native-gesture-handler";
 import MessageInfoBox from "./MessageInfoBox";
 import RolesPicker from "./RolesPicker";
 import SkillsPicker from "./SkillsPicker";
 import SectionHeadline from "./SectionHeadline";
 import FieldWithHeading from "./FieldWithHeading";
+import { LinearGradient } from "expo-linear-gradient";
 
 export interface Props {
   modalCloseComponent: React.Component;
@@ -21,18 +26,17 @@ export interface Props {
 export default function IncidentInput(props: Props) {
   let [helpRequest, setHelpRequest] = useState({
     id: 3,
-		name: "Babuschka Boi",
-		roles: [],
-		skills: [
-		]
-	});
-	let [render, setRender] = useState(false);
+    name: "Babuschka Boi",
+    roles: [],
+    skills: []
+  });
+  let [render, setRender] = useState(false);
 
-	const updateHelpRequest = (helpRequest: HelpRequest) => {
-		setHelpRequest(helpRequest);
-		setRender(!render);
-		console.log(helpRequest);
-	}
+  const updateHelpRequest = (helpRequest: HelpRequest) => {
+    setHelpRequest(helpRequest);
+    setRender(!render);
+    console.log(helpRequest);
+  };
   return (
     <View style={styles.container}>
       {props.modalCloseComponent}
@@ -40,7 +44,7 @@ export default function IncidentInput(props: Props) {
         <SectionHeadline>1. Daten eingeben</SectionHeadline>
         <SectionHeadline>2. Verfügbare Helfer</SectionHeadline>
       </View>
-			{/* {helpRequest.skills.map((item) => {return <Text>{item.name}</Text>})} */}
+      {/* {helpRequest.skills.map((item) => {return <Text>{item.name}</Text>})} */}
       <View style={{ flex: 10, flexDirection: "row" }}>
         {/* 1. card */}
         <View style={{ flex: 1 }}>
@@ -68,20 +72,20 @@ export default function IncidentInput(props: Props) {
               </View>
               <View
                 style={{
-									flex: 1,
-									flexDirection: "row",
+                  flex: 1,
+                  flexDirection: "row",
                   backgroundColor: "white",
                   justifyContent: "center",
-									alignItems: "center"
+                  alignItems: "center"
                 }}
               >
-                <Text style={{flex: 1}}>Maps input</Text>
-                <View style={{ flex: 1, backgroundColor: "white"}}>
+                <Text style={{ flex: 1 }}>Maps input</Text>
+                <View style={{ flex: 1, backgroundColor: "white" }}>
                   <Text style={{}}>Placeholder</Text>
                 </View>
               </View>
             </View>
-            <View style={{ flex: 1, justifyContent: "center"}}>
+            <View style={{ flex: 1, justifyContent: "center" }}>
               <Text>Placeholder</Text>
             </View>
           </View>
@@ -90,26 +94,63 @@ export default function IncidentInput(props: Props) {
         <View style={{ flex: 1, flexDirection: "column" }}>
           <View style={{ flex: 2 }}>
             <View style={{ flex: 3, flexDirection: "row" }}>
-              <CurrentHelperNumberCircle helpRequest={helpRequest} render={render}/>
-              <RolesPicker helpRequest={helpRequest} setHelpRequest={setHelpRequest}/>
-              <SkillsPicker helpRequest={helpRequest} setHelpRequest={updateHelpRequest} />
+              <CurrentHelperNumberCircle
+                helpRequest={helpRequest}
+                render={render}
+              />
+              <RolesPicker
+                helpRequest={helpRequest}
+                setHelpRequest={setHelpRequest}
+              />
+              <SkillsPicker
+                helpRequest={helpRequest}
+                setHelpRequest={updateHelpRequest}
+              />
             </View>
           </View>
           <View style={{ flex: 2 }}>
             <View style={{ flex: 5, flexDirection: "row" }}>
-              <View style={{ flex: 1, backgroundColor: "green" }}>
+              <View style={{ flex: 1, backgroundColor: "white" }}>
+                <View style={{ flex: 1, alignContent: "center" }}>
+                  <Text style={{ alignContent: "center", fontSize: 30 }}>
+                    Helfer anfordern
+                  </Text>
+                </View>
                 <MessageInfoBox helpRequest={helpRequest} />
-                <TextInput
+                {/* <TextInput
                   multiline={true}
                   style={{ flex: 3, backgroundColor: "white" }}
                   placeholder={"Nachricht"}
-                ></TextInput>
-                <Button
-                  style={{ flex: 1 }}
-                  onPress={() => alert("submit")}
-                  title={"Jetzt senden"}
-                />
-								
+                ></TextInput> */}
+                <TouchableOpacity onPress={() => alert("submit")}>
+                  <LinearGradient
+                    start={[0, 0.5]}
+                    end={[1, 0.5]}
+                    colors={["#000", "red"]}
+                    style={{ borderRadius: 5 }}
+                  >
+                    <View
+                      style={{
+                        margin: 1,
+                        backgroundColor: "white",
+                        borderRadius: 5
+                      }}
+                    >
+                      <Text
+                        style={{
+                          margin: 4,
+                          paddingHorizontal: 6,
+                          textAlign: "center",
+                          backgroundColor: "white",
+                          color: "#000",
+                          fontSize: 30
+                        }}
+                      >
+                        Jetzt anfordern
+                      </Text>
+                    </View>
+                  </LinearGradient>
+                </TouchableOpacity>
               </View>
             </View>
           </View>

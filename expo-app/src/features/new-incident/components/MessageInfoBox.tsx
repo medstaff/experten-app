@@ -6,7 +6,7 @@ import { TextInput, State } from "react-native-gesture-handler";
 
 export default function MessageInfoBox(props) {
     return(
-        <Text style={{ flex: 1 }}>
+        <Text style={{ flex: 4 }}>
               Melde dich jetzt bei{" "}
               <CurrentHelperNumber
                 helpRequest={props.helpRequest}

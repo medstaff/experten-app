@@ -36,23 +36,24 @@ export default function SkillsPicker(props: Props) {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: "green" }}>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
       <View
         style={{
           flex: 1,
           justifyContent: "flex-start",
-          alignItems: "center"
+          alignItems: "flex-start"
         }}
       >
-        <Text>Rollen</Text>
+        <Text>Skills</Text>
       </View>
       <View style={{ flex: 10 }}>
         <FlatList
           data={skills}
           renderItem={({ item }) => (
-            <View style={{ flex: 1, flexDirection: "row" }}>
+            <View style={{ flex: 1, flexDirection: "row",padding: 5}}>
               <CheckBox
                 value={item.checked}
+                style={{marginRight: 5}}
                 onValueChange={value => {
                   checkSkill(item, value);
                 }}

@@ -9,7 +9,7 @@ export interface Props {
 
 export default function RolesPicker(props: Props) {
   const [roles, setRoles] = useState([
-    { role: { id: 0, name: "Pflerger*in" }, checked: false },
+    { role: { id: 0, name: "Pfleger*in" }, checked: false },
     { role: { id: 1, name: "Reinigungskraft" }, checked: false },
     { role: { id: 2, name: "Sanitäter" }, checked: false },
     { role: { id: 3, name: "Noch mehr" }, checked: false }
@@ -36,12 +36,12 @@ export default function RolesPicker(props: Props) {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: "green" }}>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
       <View
         style={{
           flex: 1,
           justifyContent: "flex-start",
-          alignItems: "center"
+          alignItems: "flex-start"
         }}
       >
         <Text>Rollen</Text>
@@ -50,9 +50,10 @@ export default function RolesPicker(props: Props) {
         <FlatList
           data={roles}
           renderItem={({ item }) => (
-            <View style={{ flex: 1, flexDirection: "row" }}>
+            <View style={{ flex: 1, flexDirection: "row", padding: 5 }}>
               <CheckBox
                 value={item.checked}
+                style={{marginRight: 5}}
                 onValueChange={value => {
                   checkRole(item, value);
                 }}
