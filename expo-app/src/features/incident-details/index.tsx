@@ -65,7 +65,7 @@ const styles = {
         flex: 1
     },
     title: {
-        fontSize: 24,
+        fontSize: 48,
         fontWeight: 'bold'
     },
     fixToText: {
