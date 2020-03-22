@@ -103,7 +103,7 @@ export interface Service {
 /**
  * An object which represents a query for helpers
  */
-interface HelperSearchDefinition {
+export interface HelperSearchDefinition {
     /**
      * the event's latitude
      */

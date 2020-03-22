@@ -4,7 +4,8 @@ import { StyleSheet, Text, View, TextInput } from "react-native";
 export interface Props {
   heading: string;
   placeholder: string;
-  onChangeText: any;
+  onChangeText: (text: String) => void,
+  onEndEditing: () => void,
 }
 
 /**
@@ -22,6 +23,7 @@ export default function FieldWithHeading(props: Props) {
           onChangeText={text => props.onChangeText(text)}
           style={{ borderRadius: 2, borderWidth: 3, padding: 5 }}
           placeholder={props.placeholder}
+          onEndEditing={props.onEndEditing}
         />
       </View>
     </View>

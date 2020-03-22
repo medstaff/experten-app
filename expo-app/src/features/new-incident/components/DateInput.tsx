@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View , Text} from "react-native";
+import { View, Text } from "react-native";
 
 export interface Props {
   helpRequest: HelpRequest;
@@ -12,6 +12,7 @@ export interface Props {
  * @param props
  */
 export default function DateInput(props: Props) {
+  /** state stored user input */
   let [date, setDate] = useState<string>();
 
   useEffect(() => {
@@ -28,10 +29,10 @@ export default function DateInput(props: Props) {
       <View style={{ flex: 1 }}>
         <Text>Datum: </Text>
       </View>
-      <View style={{ flex: 1}}>
+      <View style={{ flex: 1 }}>
         <form>
           <input
-            style={{ borderWidth: 3 , padding: 5, borderColor: 'black'}}
+            style={{ borderWidth: 3, padding: 5, borderColor: "black" }}
             type="date"
             value={date}
             onChange={e => setDate(e.target.value)}

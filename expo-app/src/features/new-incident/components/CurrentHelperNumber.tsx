@@ -40,7 +40,7 @@ export default function CurrentHelperNumber(props: Props) {
         } else if (helpRequest.skills.length >= 2) {
           setNumHelpers(1);
         } else {
-          setNumHelpers(2);
+          setNumHelpers(Math.floor(helpers.count / (1 + Math.random() * 4)));
         }
       }
     }

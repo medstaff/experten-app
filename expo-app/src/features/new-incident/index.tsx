@@ -20,15 +20,3 @@ export default function NewIncident() {
     />
   );
 }
-
-/* const Home = createStackNavigator(
-  {
-    NeuerEintrag: NewIncident,
-    AlleEinträge: AllIncidents
-  }
-)
-
-const container = createBrowserApp(Home);
-
-export default container;
- */

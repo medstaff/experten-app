@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { HelperSearchDefinition } from "../../../repository/repository";
 import CurrentHelperNumberCircle from "./CurrentHelperNumberCircle";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import MessageInfoBox from "./MessageInfoBox";
 import RolesPicker from "./RolesPicker";
 import SkillsPicker from "./SkillsPicker";
 import SectionHeadline from "./SectionHeadline";
 import FieldWithHeading from "./FieldWithHeading";
-import { LinearGradient } from "expo-linear-gradient";
 import AdressMapView from "./AdressMapView";
+import SubmitButton from "./SubmitButton";
+import DateInput from "./DateInput";
+import PlaceHolderText from "./PlaceHolderText";
 
 export interface Props {
   modalCloseComponent: React.Component;
@@ -21,28 +22,43 @@ export interface Props {
  * If the sorting is sufficient, you should post
  */
 export default function IncidentInput(props: Props) {
+  /** state saved HelpRequest */
   let [helpRequest, setHelpRequest] = useState<HelpRequest>({
     id: 3,
     name: "Babuschka Boi",
+    created_at: "",
+    date_start: "",
     roles: [],
-    skills: []
+    skills: [],
+    helpers: []
   });
+
+  /** state saved helperSearchDefinition */
   let [helperSearchDef, setHelperSearchDef] = useState<HelperSearchDefinition>({
     latitude: 52,
     longitude: 21,
     requiredSkills: []
   });
-  let [render, setRender] = useState(false);
-  let [adressString, onAdressChange] = useState();
 
+  /** ugly hack = temporary workaround :) */
+  let [render, setRender] = useState<boolean>(false);
+
+  /** user input, seperate save to pass to adress */
+  let [adressString, onAdressChange] = useState<string>();
+
+  /**
+   * Setter, for updating the state-saved helpRequest
+   * @param helpRequest
+   */
   const updateHelpRequest = (helpRequest: HelpRequest) => {
     setHelpRequest(helpRequest);
+    /* ugly hack TODO: better state management, need to wait for final interfaces */
     setRender(!render);
     console.log(helpRequest);
   };
+
   return (
     <View style={styles.container}>
-      <script src="https://maps.googleapis.com/maps/api/js?key=<YOUR_GOOGLE_API_KEY>"></script>
       {props.modalCloseComponent}
       <View style={{ flex: 1, flexDirection: "row" }}>
         <SectionHeadline>1. Daten eingeben</SectionHeadline>
@@ -55,22 +71,37 @@ export default function IncidentInput(props: Props) {
           <View style={{ flex: 1, flexDirection: "column" }}>
             <View
               style={{
-                flex: 1,
+                flex: 2,
                 backgroundColor: "white",
-                justifyContent: "center"
+                justifyContent: "center",
+                padding: 5
               }}
             >
               <View style={{ flex: 1, flexDirection: "row" }}>
                 <View style={{ flex: 1 }}>
-                  <FieldWithHeading heading={"Titel"} placeholder={"Titel"} />
+                  <FieldWithHeading
+                    heading={"Titel"}
+                    placeholder={"Titel"}
+                    onChangeText={text => {
+                      let prev = helpRequest;
+                      prev.name = String(text);
+                      console.log(prev);
+                      setHelpRequest(prev);
+                    }}
+                    onEndEditing={() => {}}
+                  />
                   <FieldWithHeading
                     heading={"Ort"}
                     placeholder={"Ort"}
                     onChangeText={onAdressChange}
+                    onEndEditing={() => {}}
                   />
                 </View>
                 <View style={{ flex: 1 }}>
-                  <FieldWithHeading heading={"Datum"} placeholder={"Datum"} />
+                  <DateInput
+                    helpRequest={helpRequest}
+                    updateHelpRequest={updateHelpRequest}
+                  />
                   <View
                     style={{ flex: 1, padding: 5, justifyContent: "center" }}
                   >
@@ -78,31 +109,19 @@ export default function IncidentInput(props: Props) {
                   </View>
                 </View>
               </View>
-              <View
-                style={{
-                  flex: 1,
-                  flexDirection: "row",
-                  backgroundColor: "white",
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}
-              >
-                <AdressMapView
-                  adressString={adressString}
-                  helpRequest={helpRequest}
-                  updateHelpRequest={updateHelpRequest}
-                  updateHelperSearchDefinition={setHelperSearchDef}
-                />
-              </View>
+              <AdressMapView
+                adressString={adressString}
+                helpRequest={helpRequest}
+                updateHelpRequest={updateHelpRequest}
+                updateHelperSearchDefinition={setHelperSearchDef}
+              />
             </View>
-            <View style={{ flex: 1, justifyContent: "center" }}>
-              <Text>Placeholder</Text>
-            </View>
+            <PlaceHolderText helperSearchDefinition={helperSearchDef} />
           </View>
         </View>
         {/* 2. card */}
         <View style={{ flex: 1, flexDirection: "column" }}>
-          <View style={{ flex: 2 }}>
+          <View style={{ flex: 2, padding: 5 }}>
             <View style={{ flex: 3, flexDirection: "row" }}>
               <CurrentHelperNumberCircle
                 helpRequest={helpRequest}
@@ -121,47 +140,10 @@ export default function IncidentInput(props: Props) {
           </View>
           <View style={{ flex: 2 }}>
             <View style={{ flex: 5, flexDirection: "row" }}>
-              <View style={{ flex: 1, backgroundColor: "white" }}>
-                <View style={{ flex: 1, alignContent: "center" }}>
-                  <Text style={{ alignContent: "center", fontSize: 30 }}>
-                    Helfer anfordern
-                  </Text>
-                </View>
+              <View style={{ flex: 1, backgroundColor: "white", padding: 10 }}>
+                <SectionHeadline>Helfer anfordern</SectionHeadline>
                 <MessageInfoBox helpRequest={helpRequest} />
-                {/* <TextInput
-                  multiline={true}
-                  style={{ flex: 3, backgroundColor: "white" }}
-                  placeholder={"Nachricht"}
-                ></TextInput> */}
-                <TouchableOpacity onPress={() => alert("submit")}>
-                  <LinearGradient
-                    start={[0, 0.5]}
-                    end={[1, 0.5]}
-                    colors={["#000", "red"]}
-                    style={{ borderRadius: 5 }}
-                  >
-                    <View
-                      style={{
-                        margin: 1,
-                        backgroundColor: "white",
-                        borderRadius: 5
-                      }}
-                    >
-                      <Text
-                        style={{
-                          margin: 4,
-                          paddingHorizontal: 6,
-                          textAlign: "center",
-                          backgroundColor: "white",
-                          color: "#000",
-                          fontSize: 30
-                        }}
-                      >
-                        Jetzt anfordern
-                      </Text>
-                    </View>
-                  </LinearGradient>
-                </TouchableOpacity>
+                <SubmitButton />
               </View>
             </View>
           </View>
