@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import { StyleSheet, Text, View } from "react-native";
 import Layout from "../../components/layout";
 import LeftMenu from "../../components/left-menu";
 import RepositoryImpl from "../../repository/repository";
