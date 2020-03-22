@@ -151,10 +151,10 @@ class FetchService implements Service {
 
     getHelpRequests(): Promise<HelpRequest[]> {
         const MOCKED_HELPREQUESTS = [
-            { id: 1, name: "Am Tannenbusch 13" },
-            { id: 1, name: "Rapsacker 27" },
-            { id: 1, name: "Am Teich 4" },
-            { id: 1, name: "Unter den Linden 27" },
+            { id: 1, name: "Am Tannenbusch 13", roles: [], skills: [] },
+            { id: 2, name: "Rapsacker 27", roles: [], skills: [] },
+            { id: 3, name: "Am Teich 4", roles: [], skills: [] },
+            { id: 4, name: "Unter den Linden 27", roles: [], skills: [] },
         ];
         return this.get(Endpoint.HelpRequest, MOCKED_HELPREQUESTS);
     }
