@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import MapView from "react-native-maps";
 import Geocoder from "react-native-geocoding";
+import { HelperSearchDefinition } from "../../../repository/repository";
 
 export interface Props {
   adressString: string;
   helpRequest: HelpRequest;
   updateHelpRequest: any;
+  updateHelperSearchDefinition: HelperSearchDefinition,
 }
 
 Geocoder.init("AIzaSyC9cFDJwcroS2OcOO19SVJdYN9OQ6RYBWI");
@@ -26,6 +28,11 @@ export default function AdressMapView(props: Props) {
         var location = json.results[0].geometry.location;
         console.log(location);
         setCoords(location);
+        props.updateHelperSearchDefinition({
+          latitude: location.lat,
+          longitude: location.lng,
+          skills: props.helpRequest.skills
+        })
       })
       .catch(error => console.warn(error));
   };

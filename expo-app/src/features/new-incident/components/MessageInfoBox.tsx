@@ -11,7 +11,7 @@ export default function MessageInfoBox(props) {
   return (
     <Text style={{ flex: 3 }}>
       Melde dich jetzt bei{" "}
-      <CurrentHelperNumber helpRequest={props.helpRequest} fontSize={30} />{" "}
+      {/* <CurrentHelperNumber helpRequest={props.helpRequest} fontSize={30} /> */}{" "}
       potentiellen Helfern in deiner Nähe. Beschreibe in deiner Nachricht den
       Einsatz möglichst genau.
     </Text>

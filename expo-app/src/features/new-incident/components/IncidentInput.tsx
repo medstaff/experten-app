@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Button, Picker, CheckBox } from "react-native";
-import { Repository, RepositoryImpl } from "../../../repository/repository";
+import React, { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { HelperSearchDefinition } from "../../../repository/repository";
 import CurrentHelperNumberCircle from "./CurrentHelperNumberCircle";
-import {
-  TextInput,
-  State,
-  TouchableOpacity
-} from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import MessageInfoBox from "./MessageInfoBox";
 import RolesPicker from "./RolesPicker";
 import SkillsPicker from "./SkillsPicker";
@@ -14,7 +10,6 @@ import SectionHeadline from "./SectionHeadline";
 import FieldWithHeading from "./FieldWithHeading";
 import { LinearGradient } from "expo-linear-gradient";
 import AdressMapView from "./AdressMapView";
-
 
 export interface Props {
   modalCloseComponent: React.Component;
@@ -26,14 +21,19 @@ export interface Props {
  * If the sorting is sufficient, you should post
  */
 export default function IncidentInput(props: Props) {
-  let [helpRequest, setHelpRequest] = useState({
+  let [helpRequest, setHelpRequest] = useState<HelpRequest>({
     id: 3,
     name: "Babuschka Boi",
     roles: [],
     skills: []
   });
-	let [render, setRender] = useState(false);
-	let [adressString, onAdressChange] = useState()
+  let [helperSearchDef, setHelperSearchDef] = useState<HelperSearchDefinition>({
+    latitude: 52,
+    longitude: 21,
+    requiredSkills: []
+  });
+  let [render, setRender] = useState(false);
+  let [adressString, onAdressChange] = useState();
 
   const updateHelpRequest = (helpRequest: HelpRequest) => {
     setHelpRequest(helpRequest);
@@ -63,10 +63,14 @@ export default function IncidentInput(props: Props) {
               <View style={{ flex: 1, flexDirection: "row" }}>
                 <View style={{ flex: 1 }}>
                   <FieldWithHeading heading={"Titel"} placeholder={"Titel"} />
-                  <FieldWithHeading heading={"Ort"} placeholder={"Ort"} onChangeText={onAdressChange} />
+                  <FieldWithHeading
+                    heading={"Ort"}
+                    placeholder={"Ort"}
+                    onChangeText={onAdressChange}
+                  />
                 </View>
                 <View style={{ flex: 1 }}>
-                  <FieldWithHeading heading={"Datum"} placeholder={"Datum"}  />
+                  <FieldWithHeading heading={"Datum"} placeholder={"Datum"} />
                   <View
                     style={{ flex: 1, padding: 5, justifyContent: "center" }}
                   >
@@ -83,7 +87,12 @@ export default function IncidentInput(props: Props) {
                   alignItems: "center"
                 }}
               >
-                <AdressMapView adressString={adressString} helpRequest={helpRequest} updateHelpRequest={updateHelpRequest}/>
+                <AdressMapView
+                  adressString={adressString}
+                  helpRequest={helpRequest}
+                  updateHelpRequest={updateHelpRequest}
+                  updateHelperSearchDefinition={setHelperSearchDef}
+                />
               </View>
             </View>
             <View style={{ flex: 1, justifyContent: "center" }}>
@@ -97,6 +106,7 @@ export default function IncidentInput(props: Props) {
             <View style={{ flex: 3, flexDirection: "row" }}>
               <CurrentHelperNumberCircle
                 helpRequest={helpRequest}
+                helperSearchDefinition={helperSearchDef}
                 render={render}
               />
               <RolesPicker
