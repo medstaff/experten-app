@@ -130,8 +130,14 @@ class FetchService implements Service {
     }
 
     findHelpers(matching: HelperSearchDefinition): Promise<HelpRequestHelpers> {
+        const DEFAULT_LOC = { lat: 52.5186, lng: 13.3761 };
+
+        let lat = Math.floor(matching.latitude * 10000) / 10000;
+        let long = Math.floor(matching.longitude * 10000) / 10000;
+        let helperCount = (DEFAULT_LOC.lat == lat && DEFAULT_LOC.lng == long) ? 12 : 7;
+
         return Promise.resolve({
-            count: 3,
+            count: helperCount,
             skills: [
                 {
                     skill: { id: 4, name: "Erste Hilfe" },
