@@ -11,18 +11,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
-    backgroundColor: "#fff"
   },
   leftContainer: {
     flex: 1,
-    backgroundColor: "#aaa"
   },
   midContainer: {
     flex: 2,
-    backgroundColor: "red"
   },
   rightContainer: {
     flex: 1,
-    backgroundColor: "#aaa"
   }
 });
