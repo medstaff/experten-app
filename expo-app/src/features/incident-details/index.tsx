@@ -1,5 +1,6 @@
 import {Component, default as React} from "react";
 import {View, Text, Button, Alert, FlatList} from "react-native";
+import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
 
 interface IncidentDetailsState {
     data?: HelpRequest;
@@ -21,9 +22,12 @@ export default class IncidentDetails extends Component<IncidentDetailsProps, Inc
     }
 
     render() {
-        if (this.state == null || this.state.data == null) {
+        let state = this.state;
+        if (state == null || state.data == null) {
             return (<View/>);
         }
+        let tableHeaders = [ "Name", "E-Mail", "Telefon" ];
+        let tableData = state.data.helpers.map(h => [ h.email, h.phone ]);
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>{this.state.data.name}</Text>
@@ -38,16 +42,14 @@ export default class IncidentDetails extends Component<IncidentDetailsProps, Inc
                         onPress={() => Alert.alert('Right button pressed')}
                     />
                 </View>
-                <Text>Es haben sich 4 potenzielle Helfer:innen auf deinen Aufruf gemeldet</Text>
-                <FlatList
-                     data={this.state.data.helpers}
-                     renderItem={h => (
-                         <View style={styles.helperListItem}>
-                             <Text>{h.item.name}</Text>
-                             <Text>{h.item.email}</Text>
-                             <Text>{h.item.phone}</Text>
-                         </View>
-                     )}/>
+                <Text style={{paddingTop: 16, paddingBottom: 16}}>Es haben sich 4 potenzielle Helfer:innen auf deinen Aufruf gemeldet</Text>
+                <Table borderStyle={{borderWidth: 1}}>
+                    <Row data={tableHeaders} flexArr={[1, 1, 1]} style={styles.head} textStyle={styles.text}/>
+                    <TableWrapper style={styles.wrapper}>
+                        <Col data={state.data.helpers.map(h => h.name)} style={styles.title} heightArr={[28,28]} textStyle={styles.text}/>
+                        <Rows data={tableData} flexArr={[1, 1]} style={styles.row} textStyle={styles.text}/>
+                    </TableWrapper>
+                </Table>
             </View>
         );
     }
@@ -68,5 +70,10 @@ const styles = {
     helperListItem: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-    }
+    },
+    head: {  height: 40 },
+    wrapper: { flexDirection: 'row' },
+    tableTitle: { flex: 1, backgroundColor: '#f6f8fa' },
+    row: {  height: 28  },
+    text: { textAlign: 'center' }
 };
