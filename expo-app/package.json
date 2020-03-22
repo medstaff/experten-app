@@ -30,8 +30,14 @@
     "@types/react": "~16.9.0",
     "@types/react-native": "~0.60.23",
     "babel-preset-expo": "~8.0.0",
+    "gh-pages": "^2.2.0",
     "jest": "^25.1.0",
     "typescript": "~3.6.3"
   },
-  "private": true
+  "private": true,
+  "homepage": "http://helferplattform.github.io/helfer-app",
+  "scripts": {
+    "deploy": "gh-pages -d web-build",
+    "predeploy": "expo build:web"
+  }
 }
