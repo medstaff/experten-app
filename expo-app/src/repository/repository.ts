@@ -150,11 +150,73 @@ class FetchService implements Service {
     }
 
     getHelpRequests(): Promise<HelpRequest[]> {
+        const MOCKED_HELPERS = [
+            {
+                id: 1,
+                name: "Hans Gustafson",
+                email: "hans@gustafson.de",
+                phone: "0151 / 472254841",
+                postcode: "23560"
+            },
+            {
+                id: 2,
+                name: "Ali Yangürk",
+                email: "ali.yangürk@gmail.com",
+                phone: "0176 / 572121244",
+                postcode: "23558"
+            },
+            {
+                id: 3,
+                name: "Tanja Toasterhausen",
+                email: "toastertanne@web.de",
+                phone: "0162 / 1745124",
+                postcode: "23558"
+            },
+            {
+                id: 4,
+                name: "Sarah Saarhusen",
+                email: "sarah@saarhusen.de",
+                phone: "0162 / 2451845",
+                postcode: "22574"
+            },
+        ];
         const MOCKED_HELPREQUESTS = [
-            { id: 1, name: "Am Tannenbusch 13", roles: [], skills: [] },
-            { id: 2, name: "Rapsacker 27", roles: [], skills: [] },
-            { id: 3, name: "Am Teich 4", roles: [], skills: [] },
-            { id: 4, name: "Unter den Linden 27", roles: [], skills: [] },
+            {
+                id: 1,
+                name: "Am Tannenbusch 13",
+                created_at: "22.03.2020 17:12 Uhr",
+                date_start: "23.03.2020 14:00 Uhr",
+                roles: [],
+                skills: [],
+                helpers: MOCKED_HELPERS
+            },
+            {
+                id: 2,
+                name: "Rapsacker 27",
+                created_at: "22.03.2020 17:12 Uhr",
+                date_start: "23.03.2020 14:00 Uhr",
+                roles: [],
+                skills: [],
+                helpers: MOCKED_HELPERS
+            },
+            {
+                id: 3,
+                name: "Am Teich 4",
+                created_at: "22.03.2020 17:12 Uhr",
+                date_start: "23.03.2020 14:00 Uhr",
+                roles: [],
+                skills: [],
+                helpers: MOCKED_HELPERS
+            },
+            {
+                id: 4,
+                name: "Unter den Linden 27",
+                created_at: "22.03.2020 17:12 Uhr",
+                date_start: "23.03.2020 14:00 Uhr",
+                roles: [],
+                skills: [],
+                helpers: MOCKED_HELPERS
+            },
         ];
         return this.get(Endpoint.HelpRequest, MOCKED_HELPREQUESTS);
     }
