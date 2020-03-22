@@ -13,6 +13,8 @@ import SkillsPicker from "./SkillsPicker";
 import SectionHeadline from "./SectionHeadline";
 import FieldWithHeading from "./FieldWithHeading";
 import { LinearGradient } from "expo-linear-gradient";
+import AdressMapView from "./AdressMapView";
+
 
 export interface Props {
   modalCloseComponent: React.Component;
@@ -30,7 +32,8 @@ export default function IncidentInput(props: Props) {
     roles: [],
     skills: []
   });
-  let [render, setRender] = useState(false);
+	let [render, setRender] = useState(false);
+	let [adressString, onAdressChange] = useState()
 
   const updateHelpRequest = (helpRequest: HelpRequest) => {
     setHelpRequest(helpRequest);
@@ -39,6 +42,7 @@ export default function IncidentInput(props: Props) {
   };
   return (
     <View style={styles.container}>
+      <script src="https://maps.googleapis.com/maps/api/js?key=<YOUR_GOOGLE_API_KEY>"></script>
       {props.modalCloseComponent}
       <View style={{ flex: 1, flexDirection: "row" }}>
         <SectionHeadline>1. Daten eingeben</SectionHeadline>
@@ -59,10 +63,10 @@ export default function IncidentInput(props: Props) {
               <View style={{ flex: 1, flexDirection: "row" }}>
                 <View style={{ flex: 1 }}>
                   <FieldWithHeading heading={"Titel"} placeholder={"Titel"} />
-                  <FieldWithHeading heading={"Ort"} placeholder={"Ort"} />
+                  <FieldWithHeading heading={"Ort"} placeholder={"Ort"} onChangeText={onAdressChange} />
                 </View>
                 <View style={{ flex: 1 }}>
-                  <FieldWithHeading heading={"Datum"} placeholder={"Datum"} />
+                  <FieldWithHeading heading={"Datum"} placeholder={"Datum"}  />
                   <View
                     style={{ flex: 1, padding: 5, justifyContent: "center" }}
                   >
@@ -79,10 +83,7 @@ export default function IncidentInput(props: Props) {
                   alignItems: "center"
                 }}
               >
-                <Text style={{ flex: 1 }}>Maps input</Text>
-                <View style={{ flex: 1, backgroundColor: "white" }}>
-                  <Text style={{}}>Placeholder</Text>
-                </View>
+                <AdressMapView adressString={adressString} helpRequest={helpRequest} updateHelpRequest={updateHelpRequest}/>
               </View>
             </View>
             <View style={{ flex: 1, justifyContent: "center" }}>
