@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/helfer-app/static/js/app.c212cafe.chunk.js",
-    "app.js.map": "/helfer-app/static/js/app.c212cafe.chunk.js.map",
+    "app.js": "/helfer-app/static/js/app.8a522c44.chunk.js",
+    "app.js.map": "/helfer-app/static/js/app.8a522c44.chunk.js.map",
     "runtime~app.js": "/helfer-app/static/js/runtime~app.ba893389.js",
     "runtime~app.js.map": "/helfer-app/static/js/runtime~app.ba893389.js.map",
     "static/js/2.4722534b.chunk.js": "/helfer-app/static/js/2.4722534b.chunk.js",
@@ -11,12 +11,12 @@
     "favicon.ico": "/helfer-app/favicon.ico",
     "index.html": "/helfer-app/index.html",
     "manifest.json": "/helfer-app/manifest.json",
-    "precache-manifest.a356e140bc8d246368938f6af1446751.js": "/helfer-app/precache-manifest.a356e140bc8d246368938f6af1446751.js",
+    "precache-manifest.bab6e402edb8a3caba11f64bebeeda72.js": "/helfer-app/precache-manifest.bab6e402edb8a3caba11f64bebeeda72.js",
     "serve.json": "/helfer-app/serve.json"
   },
   "entrypoints": [
     "static/js/runtime~app.ba893389.js",
     "static/js/2.4722534b.chunk.js",
-    "static/js/app.c212cafe.chunk.js"
+    "static/js/app.8a522c44.chunk.js"
   ]
 }
