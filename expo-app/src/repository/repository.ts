@@ -1,3 +1,5 @@
+import Chance from 'chance';
+
 export interface Repository {
     /**
      * create a helper
@@ -155,37 +157,30 @@ class FetchService implements Service {
         return Promise.resolve();
     }
 
+    private mockHelper(chance: Chance): Helper {
+        return {
+            id: chance.integer({ min: 1, max: 100000 }),
+            name: chance.name(),
+            email: chance.email(),
+            phone: chance.phone({ country: 'uk', mobile: true }),
+            postcode: chance.postcode()
+        }
+    }
+
+    private mockHelpers(): Helper[] {
+        let chance = new Chance();
+
+        let length = chance.integer({ min: 2, max: 20 });
+
+        let arr = new Array(length);
+
+        for (let i = 0; i < length; ++i) {
+            arr[i] = this.mockHelper(chance);
+        }
+        return arr;
+    }
+
     getHelpRequests(): Promise<HelpRequest[]> {
-        const MOCKED_HELPERS = [
-            {
-                id: 1,
-                name: "Hans Gustafson",
-                email: "hans@gustafson.de",
-                phone: "0151 / 472254841",
-                postcode: "23560"
-            },
-            {
-                id: 2,
-                name: "Ali Yangürk",
-                email: "ali.yangürk@gmail.com",
-                phone: "0176 / 572121244",
-                postcode: "23558"
-            },
-            {
-                id: 3,
-                name: "Tanja Toasterhausen",
-                email: "toastertanne@web.de",
-                phone: "0162 / 1745124",
-                postcode: "23558"
-            },
-            {
-                id: 4,
-                name: "Sarah Saarhusen",
-                email: "sarah@saarhusen.de",
-                phone: "0162 / 2451845",
-                postcode: "22574"
-            },
-        ];
         const MOCKED_HELPREQUESTS = [
             {
                 id: 1,
@@ -194,7 +189,7 @@ class FetchService implements Service {
                 date_start: "23.03.2020 14:00 Uhr",
                 roles: [],
                 skills: [],
-                helpers: MOCKED_HELPERS
+                helpers: this.mockHelpers()
             },
             {
                 id: 2,
@@ -203,7 +198,7 @@ class FetchService implements Service {
                 date_start: "23.03.2020 14:00 Uhr",
                 roles: [],
                 skills: [],
-                helpers: MOCKED_HELPERS
+                helpers: this.mockHelpers()
             },
             {
                 id: 3,
@@ -212,7 +207,7 @@ class FetchService implements Service {
                 date_start: "23.03.2020 14:00 Uhr",
                 roles: [],
                 skills: [],
-                helpers: MOCKED_HELPERS
+                helpers: this.mockHelpers()
             },
             {
                 id: 4,
@@ -221,7 +216,7 @@ class FetchService implements Service {
                 date_start: "23.03.2020 14:00 Uhr",
                 roles: [],
                 skills: [],
-                helpers: MOCKED_HELPERS
+                helpers: this.mockHelpers()
             },
         ];
         return this.get(Endpoint.HelpRequest, MOCKED_HELPREQUESTS);

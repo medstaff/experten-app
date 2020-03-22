@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-community/masked-view": "0.1.5",
     "@react-navigation/web": "^1.0.0-alpha.9",
+    "chance": "^1.1.4",
     "expo": "~36.0.0",
     "expo-cli": "^3.15.5",
     "expo-linear-gradient": "~8.0.0",
