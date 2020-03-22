@@ -10,7 +10,7 @@ export interface Props {
 }
 
 export default function Layout(props: Props) {
-  let [isVisible, setIsVisible] = useState(false);
+  let [isVisible, setIsVisible] = useState(true);
 
   let renderButton = (text, onPress) => (
     <TouchableOpacity onPress={onPress}>
@@ -39,6 +39,7 @@ export default function Layout(props: Props) {
           backgroundColor: "white",
           padding: 22,
           borderRadius: 4,
+          alignItems: "center",
           borderColor: "rgba(0, 0, 0, 0.1)"
         }}
       >
