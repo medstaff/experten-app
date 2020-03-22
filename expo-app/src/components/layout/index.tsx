@@ -15,39 +15,28 @@ export interface Props {
  * @param props
  */
 export default function Layout(props: Props) {
-  let [isVisible, setIsVisible] = useState(true);
+  /** modal visibility state */
+  let [isVisible, setIsVisible] = useState<boolean>(true);
 
-  let renderButton = (text, onPress) => (
+  /**
+   * Button to toggle the modal overlay
+   * @param text Button Text
+   * @param onPress callback
+   */
+  let renderButton = (text: string, onPress: () => void) => (
     <TouchableOpacity onPress={onPress}>
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "lightblue",
-          padding: 12,
-          margin: 16,
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 4,
-          borderColor: "rgba(0, 0, 0, 0.1)"
-        }}
-      >
+      <View style={styles.button}>
         <Text>{text}</Text>
       </View>
     </TouchableOpacity>
   );
 
+  /**
+   * create the content of the modal overlay
+   */
   let renderModalContent = () => {
     return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "white",
-          alignItems: "center",
-          padding: 22,
-          borderRadius: 4,
-          borderColor: "rgba(0, 0, 0, 0.1)"
-        }}
-      >
+      <View style={styles.modalContentContainer}>
         <IncidentInput
           modalCloseComponent={renderButton("Close", () => {
             setIsVisible(false);
@@ -86,5 +75,23 @@ const styles = StyleSheet.create({
   },
   rightContainer: {
     flex: 1
+  },
+  modalContentContainer: {
+    flex: 1,
+    backgroundColor: "white",
+    alignItems: "center",
+    padding: 22,
+    borderRadius: 4,
+    borderColor: "rgba(0, 0, 0, 0.1)"
+  },
+  button: {
+    flex: 1,
+    backgroundColor: "lightblue",
+    padding: 12,
+    margin: 16,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+    borderColor: "rgba(0, 0, 0, 0.1)"
   }
 });
