@@ -1,22 +1,22 @@
 {
   "files": {
-    "app.js": "/experten-app/static/js/app.732544e4.chunk.js",
-    "app.js.map": "/experten-app/static/js/app.732544e4.chunk.js.map",
+    "app.js": "/experten-app/static/js/app.79652bb4.chunk.js",
+    "app.js.map": "/experten-app/static/js/app.79652bb4.chunk.js.map",
     "runtime~app.js": "/experten-app/static/js/runtime~app.e5c58577.js",
     "runtime~app.js.map": "/experten-app/static/js/runtime~app.e5c58577.js.map",
-    "static/js/2.113ad400.chunk.js": "/experten-app/static/js/2.113ad400.chunk.js",
-    "static/js/2.113ad400.chunk.js.map": "/experten-app/static/js/2.113ad400.chunk.js.map",
+    "static/js/2.9ccca5da.chunk.js": "/experten-app/static/js/2.9ccca5da.chunk.js",
+    "static/js/2.9ccca5da.chunk.js.map": "/experten-app/static/js/2.9ccca5da.chunk.js.map",
     "apple/icons/icon_192x192.png": "/experten-app/apple/icons/icon_192x192.png",
     "apple/icons/icon_512x512.png": "/experten-app/apple/icons/icon_512x512.png",
     "favicon.ico": "/experten-app/favicon.ico",
     "index.html": "/experten-app/index.html",
     "manifest.json": "/experten-app/manifest.json",
-    "precache-manifest.4b4a822d28eac59ea1ba19f85c640897.js": "/experten-app/precache-manifest.4b4a822d28eac59ea1ba19f85c640897.js",
+    "precache-manifest.216ca137a6d95479e04a206eebe90c33.js": "/experten-app/precache-manifest.216ca137a6d95479e04a206eebe90c33.js",
     "serve.json": "/experten-app/serve.json"
   },
   "entrypoints": [
     "static/js/runtime~app.e5c58577.js",
-    "static/js/2.113ad400.chunk.js",
-    "static/js/app.732544e4.chunk.js"
+    "static/js/2.9ccca5da.chunk.js",
+    "static/js/app.79652bb4.chunk.js"
   ]
 }

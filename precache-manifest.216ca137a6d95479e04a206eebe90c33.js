@@ -1,19 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "6fa3d4feecb9bab0e243",
-    "url": "/experten-app/static/js/app.732544e4.chunk.js"
+    "revision": "e099b5b7ded7860d139b",
+    "url": "/experten-app/static/js/app.79652bb4.chunk.js"
   },
   {
     "revision": "187bc0bcea1386c4d2f6",
     "url": "/experten-app/static/js/runtime~app.e5c58577.js"
   },
   {
-    "revision": "e3c1a9d792565bae5005",
-    "url": "/experten-app/static/js/2.113ad400.chunk.js"
-  },
-  {
-    "revision": "d0c694b562b2208635f250762cd7fc79",
-    "url": "/experten-app/serve.json"
+    "revision": "1275b240ac2d420e979f",
+    "url": "/experten-app/static/js/2.9ccca5da.chunk.js"
   },
   {
     "revision": "7a7bc7ead25db795e58b336f04d2624c",
@@ -22,6 +18,10 @@ self.__precacheManifest = [
   {
     "revision": "48c7ed4e7da9792af288a60d7242d615",
     "url": "/experten-app/expo-service-worker.js"
+  },
+  {
+    "revision": "d0c694b562b2208635f250762cd7fc79",
+    "url": "/experten-app/serve.json"
   },
   {
     "revision": "cfaef5fe38ca5bb7a4cb6ddc86190fe7",
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/experten-app/apple/icons/icon_512x512.png"
   },
   {
-    "revision": "d7de281f10004aadae7ccef46ccfe905",
+    "revision": "be7f78299291e41e49922c72347e1f55",
     "url": "/experten-app/index.html"
   },
   {
