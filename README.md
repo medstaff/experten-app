@@ -8,4 +8,4 @@ Die App für die MedStaff+. Mithilfe dieser App können berechtigte Stelle Hilfs
 1. `cd expo-app && yarn run`
 
 # Demo
-https://medstaff.github.io/helfer-app/
+https://medstaff.github.io/experten-app/
